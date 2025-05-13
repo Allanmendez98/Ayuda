@@ -1,0 +1,330 @@
+/* Reset de márgenes y paddings */
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal para simular un dispositivo móvil */
+.mobile-view {
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #464543;
+  background-image: url("/imgs/background1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Contenedor para top-bar y contenido */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+/* Estilos para la barra superior */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  height: 70px;
+  
+  gap: 0.5rem; /* Espacio entre elementos */
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0; /* Evita que se reduzca */
+}
+
+.app-title {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+  font-weight: bold;
+
+  white-space: nowrap; /* Evita salto de línea */
+  text-align: left; /* Alineación izquierda */
+
+}
+
+.icons-container {
+  display: flex;
+  gap: 0.5rem; /* Espacio entre iconos */
+  align-items: center;
+}
+
+.menu-icon, .search-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: white;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .profile-image {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .menu-icon, .search-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Estilos para la imagen dentro de un círculo */
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
+/* Estilos para el texto "Ayuda GatitoPlis" */
+.top-bar h1 {
+font-size: 1.5rem !important; /* Sobrescribe cualquier estilo previo */
+  margin: 0 !important;
+  font-weight: bold;
+
+  margin-right: 1rem;
+  color: #3c3c3c;
+}
+
+/* BARRA DE BÚSQUEDA */
+.search-container {
+
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: #464543;
+  padding: 10px;
+  display: none;
+  z-index: 1001;
+  box-sizing: border-box;
+}
+
+.search-container.active {
+  display: block;
+}
+
+.search-bar {
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  display: block;
+}
+
+.search-results {
+  width: calc(100% - 20px);
+  margin: 10px auto 0;
+  background: #464543;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1002;
+}
+
+.search-result-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #000000;
+  color: #ffffff;
+}
+
+.search-result-item:hover {
+  background-color: #5a5957;
+}
+
+/* MENÚ LATERAL */
+.options-column {
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  width: 280px;
+  max-width: 80%;
+  height: calc(100vh - 70px);
+  background-color: #464543;
+  transition: left 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.options-column.active {
+  left: revert;
+}
+
+.overlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Estilos para el encabezado de la opción */
+.option-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.option-header:hover, .option-header.selected {
+  background-color: #5a5957;
+}
+
+/* Estilos para la flecha */
+.arrow {
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+/* Estilos para las subopciones */
+.subopciones {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.subopcion {
+  padding: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.subopcion:hover, .subopcion.selected {
+  background-color: #5a5957;
+}
+
+/* Contenido principal */
+.info-column {
+  flex: 1; /* Ocupa el espacio restante */
+  overflow-y: auto; /* Habilita scroll vertical */
+  height: calc(100vh - 70px); /* Altura total menos el top-bar */
+  padding: 1rem;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch; /* Scroll suave en móviles */
+}
+
+/* Estilos para el título de la información */
+.info-column h2 {
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ffffff;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(135deg, #ffffff, #646464);
+  color: #3c3c3c;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-column h2:hover {
+  background: linear-gradient(135deg, #646464, #ffffff);
+  transform: scale(1.02);
+}
+
+/* Estilos para el contenido */
+.info-column p {
+  color: #3c3c3c;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Estilos para las imágenes con texto */
+.image-container {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.image-container p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #3c3c3c;
+}
+
+/* Estilos para los íconos */
+.option-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+/* Media queries para ajustes responsivos */
+@media (max-width: 480px) {
+  .options-column {
+    width: 85%;
+  }
+  
+  .search-container {
+    padding: 10px 5px;
+  }
+  
+  .search-bar, .search-results {
+    width: calc(100% - 10px);
+  }
+  
+  .top-bar h1 {
+    font-size: 1rem;
+  }
+}

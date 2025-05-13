@@ -1,0 +1,258 @@
+
+
+
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+ /* Estilos para la barra superior */
+.top-bar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: #464543;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    z-index: 1000;
+    margin: 0;
+    position: relative; /* Asegura que el contenedor de resultados se posicione correctamente */
+    background-image: url(/imgs/background1.png);
+  }
+  
+  /* Estilos para la imagen dentro de un círculo */
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    
+  }
+  
+  /* Estilos para el texto "Ayuda GatitoPlis" */
+  .top-bar h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 1rem;
+    color: #494949;
+
+  }
+  
+  /* Estilos para el contenedor principal */
+  .help-container {
+    display: flex;
+    height: calc(100vh - 60px);
+    background-color: #464543;
+    margin: 0;
+    padding: 0;
+  }
+  
+ /* Estilos para la columna izquierda (opciones) */
+.options-column {
+  position: sticky;
+  top: 60px;
+  width: 25%;
+  background-color: #464543;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  background-image: url(/imgs/background1.png);
+}
+
+/* Estilos para el encabezado de la opción */
+.option-header {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #494949;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0; /* Asegura que no haya margen */
+}
+
+/* Eliminar viñetas de las listas */
+.options-column ul {
+  list-style: none;
+  padding-left: 0; /* Elimina el padding izquierdo predeterminado */
+}
+
+.options-column > ul > li {
+  list-style: none;
+  margin: 0; /* Asegura que no haya margen */
+  padding: 0; /* Asegura que no haya padding */
+}
+  .option-header:hover {
+    background-color: #a3a3a3;
+  }
+  
+  .option-header.selected {
+    background-color: #a3a3a3;
+  }
+  
+ /* Estilos para la flecha */
+.arrow {
+  font-size: 0.8rem;
+  margin-left: auto; /* Mueve la flecha a la derecha */
+}
+  
+
+/* Estilos para las subopciones */
+.subopciones {
+  list-style: none;
+  padding-left: 1rem; /* Espacio a la izquierda para el contenedor de subopciones */
+}
+
+.subopcion {
+
+  padding: 0.5rem;
+  margin-left: 1.5rem; /* Mueve el texto a la derecha */
+  padding-top: 1rem; /* Espaciado interno arriba */
+  padding-bottom: 1rem; /* Espaciado interno abajo */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  color: #494949;
+  font-size: 1.25rem; /* Tamaño del texto */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.subopcion:hover {
+  background-color: #a3a3a3; /* Cambia el color de fondo al pasar el ratón */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.subopcion.selected {
+  background-color: #a3a3a3;;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+}
+
+  
+  /* Estilos para la columna derecha (información) */
+  .info-column {
+    
+    width: 75%;
+    padding-left: 17rem; /* Aumenta el espaciado a la izquierda */
+    padding-right: 17rem; /* Aumenta el espaciado a la derecha */
+    overflow-y: auto;
+    height: calc(100vh - 60px); 
+    background-color: #464543;
+    color: #ffffff;
+    /* Agrega la imagen de fondo */
+  background-image: url("/imgs/background1.png"); /* Ruta de la imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  }
+  
+  /* Estilos para el título de la información */
+  .info-column h2 {
+    padding-left: 40px; /* Espaciado interno */
+    padding-right: 40px;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    margin-bottom: 25px; /* Margen superior e inferior */
+    border: 2px solid #ffffff; /* Borde del cuadro */
+    border-radius: 0px 0px 12px 12px; /* Bordes redondeados */
+    background: linear-gradient(135deg, #ffffff, #646464); /* Degradado de colores */
+    color: rgb(117, 117, 117); /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrar el texto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background 0.3s ease, transform 0.2s ease; /* Transición suave */
+  }
+  .info-column h2:hover {
+    background: linear-gradient(135deg, #646464, #ffffff); /* Cambia el degradado */
+    transform: scale(1.02); /* Escala ligeramente el título */
+  }
+  
+  /* Estilos para el contenido de la información */
+  .info-column p {
+    color: black;
+    font-size: 1.25rem;
+    margin: 0rem; /* Espaciado a los lados */
+    text-align: justify; /* Texto justificado */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+  }
+  
+  /* Estilos para las imágenes con texto */
+  .image-container {
+    margin: 0rem; /* Espaciado alrededor de la imagen */
+    text-align: center; /* Centrar el texto y la imagen */
+    
+  }
+  
+  .image-container img {
+    width: 100%; /* Ancho completo */
+    max-width: 800px; /* Limitar el ancho máximo */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 1rem; /* Espaciado arriba de la imagen */
+  }
+  
+  .image-container p {
+    margin-top: 2rem; /* Espaciado arriba y abajo del texto */
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    
+  }
+  .search-container {
+    position: relative;
+    flex-grow: 1;
+  }
+  .search-bar {
+    background-image: url("/imgs/background1.png"); /* Ruta de la imagen */
+    padding: 8px;
+    border: 1px solid #464543;
+    border-radius: 4px;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    width: 500px; /* Asegura que ocupe todo el ancho */
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    margin-left: 120px; /* Espacio entre el texto y la barra de búsqueda */
+  }
+  .search-results {
+    
+    position: absolute;
+    top: 100%; /* Coloca el contenedor justo debajo de la barra de búsqueda */
+    left: 120px; /* Ajusta el margen izquierdo para que coincida con la barra de búsqueda */
+    background: #464543;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+    width: 500px; /* Mismo ancho que la barra de búsqueda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .search-result-item {
+    background-image: url("/imgs/background1.png"); /* Ruta de la imagen */
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #000000; /* Ajusta el color del borde para que combine con el fondo */
+    color: rgb(0, 0, 0); /* Color del texto en blanco */
+  }
+  
+  .search-result-item:hover {
+    background-color: #5a5957; /* Color de fondo al hacer hover */
+  }
+  
+  /* Estilos para los íconos */
+.option-icon {
+  width: 24px; /* Ancho fijo para todos los íconos */
+  height: 24px; /* Altura fija para todos los íconos */
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
+}

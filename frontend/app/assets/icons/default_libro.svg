@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.74 148.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #848484;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-family: FuturaBT-Heavy, 'Futura Hv BT';
+        font-size: 18px;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <rect class="cls-1" x="0" y="0" width="103.74" height="148.5" rx="9.06" ry="9.06"/>
+    <text class="cls-2" transform="translate(19.05 58.24)"><tspan x="0" y="0">Imagen</tspan><tspan x="16.78" y="21.6">del </tspan><tspan x="12.99" y="43.2">libro</tspan></text>
+  </g>
+</svg>
